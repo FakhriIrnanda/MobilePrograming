@@ -37,5 +37,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             val volume = panjang.toDouble() * lebar.toDouble() * tinggi.toDouble()
             result.text = volume.toString()
         }
+
+//        ini main
     }
 }

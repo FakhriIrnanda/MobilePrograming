@@ -9,6 +9,10 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
+    companion object{
+        private const val STATE_RESULT = "state_result"
+    }
+
     //Deklarasi Variabel
     private lateinit var input_length: EditText
     private lateinit var input_width: EditText
@@ -28,14 +32,48 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         result= findViewById(R.id.result)
 
         tombol.setOnClickListener(this)
+        if(savedInstanceState != null) {
+            val hasil = savedInstanceState.getString(STATE_RESULT)
+            result.text = hasil
+        }
+
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(STATE_RESULT, result.text.toString())
+        setContentView(R.layout.activity_main)
     }
     override fun onClick(v: View?) {
         if(v?.id == R.id.tombol) {
             var panjang = input_length.text.toString().trim()
             var lebar = input_width.text.toString().trim()
             var tinggi = input_height.text.toString().trim()
-            val volume = panjang.toDouble() * lebar.toDouble() * tinggi.toDouble()
-            result.text = volume.toString()
+            var isEmptyFields = false
+            /*
+            memastikan apakah inputan masih ada yang kosong
+             */
+            if(panjang.isEmpty()){
+                isEmptyFields = true
+                input_length.error = "Field ini tidak boleh kosong"
+            }
+            if(lebar.isEmpty()){
+                isEmptyFields = true
+                input_width.error = "Field ini tidak boleh kosong"
+            }
+            if(tinggi.isEmpty()){
+                isEmptyFields = true
+                input_height.error = "Field ini tidak boleh kosong"
+            }
+
+            /*
+           Jika semua inputan valid maka tampilkan hasilnya
+            */
+            if(!isEmptyFields){
+                val volume = panjang.toDouble() * lebar.toDouble() * tinggi.toDouble()
+                result.text = volume.toString()
+            }
+
         }
     }
 }

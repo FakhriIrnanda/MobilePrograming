@@ -11,55 +11,16 @@
     tools:context=".MainActivity"
     tools:ignore="ExtraText">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/length"/> //Panjang
-    <EditText
-        android:id="@+id/input_length"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:lines="1"/> //input panjang
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/width"/> //lebar
-    <EditText
-        android:id="@+id/input_width"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:lines="1"/> //input lebar
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/height"/> //tinggi
-    <EditText
-        android:id="@+id/input_height"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:lines="1"/> //input tinggi
-
     <Button
-        android:id="@+id/tombol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:text="@string/tombol"/>
-
-    <TextView
-        android:id="@+id/result"
+        android:id="@+id/btn_switch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/result"
-        android:gravity="center"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:text="@string/contoh" />
+    <Button
+        android:id="@+id/btn_move_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pindah_activity_dengan_data"/>
 
 
 

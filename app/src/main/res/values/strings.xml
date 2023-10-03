@@ -5,4 +5,6 @@
     <string name="height">Tinggi</string>
     <string name="tombol">Hitung</string>
     <string name="result">Result</string>
+    <string name="contoh">contoh</string>
+    <string name="pindah_activity_dengan_data">pindah Activity Dengan Data</string>
 </resources>
